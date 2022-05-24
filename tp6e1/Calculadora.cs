@@ -17,11 +17,15 @@ public class Calculadora
         Resultado -= valor; 
     }public void Multiplicacion(double valor)
     {
-        Resultado -= valor; 
+        Resultado *= valor; 
     }
     public void Division(double valor)
     {
-        Resultado -= valor; 
+        Resultado /= valor; 
+    }
+    public void Limpiar()
+    {
+        Resultado = 0;
     }
 
 }
