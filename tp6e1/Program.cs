@@ -2,7 +2,7 @@
 Calculadora calc = new Calculadora(5);
 
 int op;
-double a, b, r;
+double b;
 do {
     Console.WriteLine("\nIngrese el código de la operación: (0-4 u otra para salir)");
     op = Convert.ToInt16(Console.ReadLine());
