@@ -15,10 +15,15 @@ public class Empleado
     public char Genero { get => genero; set => genero = value; }
     public double Sueldo { get => sueldo; set => sueldo = value; }
     public Cargos Cargo { get => cargo; set => cargo = value; }
+   
+    public int antiguedad() 
+    {
+        return Convert.ToInt32((DateTime.Now - fechaIngreso).Days/365.2425);
+    }
 
-
-    // public int antiguedad() 
-    // {
-    //     return DateTime.Now - fechaIngreso;
-    // }
+    public int edad()
+    {
+        return Convert.ToInt32((DateTime.Now - fechaNacimiento).Days/365.2425);
+    }
+    
 }
