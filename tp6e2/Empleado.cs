@@ -25,6 +25,11 @@ public class Empleado
     {
         return Convert.ToInt32((DateTime.Now - fechaNacimiento).Days/365.2425);
     }
+    public int aniosParaJubilarse()
+    {
+        int anios = (char.ToUpper(genero) == 'M') ? 65 : 60; //falta control generos no binarios?
+        return anios - edad();
+    }
     // i) 1 % del sueldo básico por cada año de antigüedad hasta los
     // 20 años, a partir de este, el porcentaje se fija en 25%.
     // ii) Si el cargo es Ingeniero o Especialista, el Adicional se
@@ -47,7 +52,7 @@ public class Empleado
         if(cargo==Cargos.Ingeniero || cargo==Cargos.Especialista) {
             total += 0.5*sueldo;//0.5*total error de enunciado?
         }
-        if(estadoCivil == 'c') {
+        if(char.ToUpper(estadoCivil) == 'c') {
             total += 15000;
         }
         return total;
